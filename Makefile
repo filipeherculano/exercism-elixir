@@ -1,4 +1,5 @@
 # install dependencies
+# submit to exercism
 
 download:
 	exercism download --exercise=$(EXERCISE) --track=$(TRACK)
