@@ -1,11 +1,13 @@
-# build makefile operations
+# install dependencies
 
+download:
+	exercism download --exercise=$(EXERCISE) --track=$(TRACK)
+	mv -v ~/snap/exercism/5/exercism/$(TRACK)/* .
+	git checkout -b feat/$(EXERCISE)_$(TRACK)
 
-# download problem given (track, problem)
-# # move problem to this repo
-# # create feat branch
-
-
-# include problem to github
-# # add/commit/submit PR to github
-# # remove local branch
+include:
+	git add .
+	git commit -m "feat: Solved $(EXERCISE) on $(TRACK) track"
+	hub pull-request
+	git checkout master
+	git branch -D feat/$(EXERCISE)_$(TRACK)
