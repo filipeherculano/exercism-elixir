@@ -4,10 +4,11 @@ submit:
 	# NOT FINISHED
 	cp -a $(EXERCISE) ~/snap/exercism/5/exercism/elixir/
 	exercism submit ~/snap/exercism/5/exercism/elixir/$(EXERCISE)/lib/rotational_cipher.ex
-
+  
 download:
 	exercism download --exercise=$(EXERCISE) --track=$(TRACK)
-	mv -v ~/snap/exercism/5/exercism/$(TRACK)/$(EXERCISE)/* .
+	mkdir $(EXERCISE)
+	mv -v ~/snap/exercism/5/exercism/$(TRACK)/$(EXERCISE)/* ./$(EXERCISE)
 	git checkout -b feat/$(EXERCISE)_$(TRACK)
 
 include:
@@ -17,3 +18,4 @@ include:
 	hub pull-request -m "feat: Solved $(EXERCISE) on $(TRACK) track"
 	git checkout master
 	git branch -D feat/$(EXERCISE)_$(TRACK)
+  git pull origin master
