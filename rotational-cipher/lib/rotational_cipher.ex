@@ -11,8 +11,8 @@ defmodule RotationalCipher do
     text
     |> String.graphemes()
     |> Enum.map(fn
-      << byte >> when byte >= ?a and byte <= ?z -> Integer.mod(byte - ?a + shift, 26) + ?a
-      << byte >> when byte >= ?A and byte <= ?Z -> Integer.mod(byte - ?A + shift, 26) + ?A
+      <<byte>> when byte >= ?a and byte <= ?z -> Integer.mod(byte - ?a + shift, 26) + ?a
+      <<byte>> when byte >= ?A and byte <= ?Z -> Integer.mod(byte - ?A + shift, 26) + ?A
       grapheme -> grapheme
     end)
     |> List.to_string()
