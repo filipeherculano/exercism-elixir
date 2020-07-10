@@ -28,5 +28,4 @@ defmodule ResistorColor do
   def code("violet"), do: 7
   def code("grey"), do: 8
   def code("white"), do: 9
-
 end

@@ -1,5 +1,6 @@
 defmodule SecretHandshake do
   use Bitwise, only_operators: true
+
   @doc """
   Determine the actions of a secret handshake based on the binary
   representation of the given `code`.
@@ -30,5 +31,4 @@ defmodule SecretHandshake do
   defp check_and_add(list, 0b1000), do: list ++ ["jump"]
   defp check_and_add(list, 0b10000), do: Enum.reverse(list)
   defp check_and_add(list, _), do: list
-
 end

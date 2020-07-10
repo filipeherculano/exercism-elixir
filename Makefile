@@ -18,4 +18,4 @@ include:
 	hub pull-request -m "feat: Solved $(EXERCISE) on $(TRACK) track"
 	git checkout master
 	git branch -D feat/$(EXERCISE)_$(TRACK)
-  git pull origin master
+	git pull origin master
