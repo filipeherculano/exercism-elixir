@@ -44,13 +44,13 @@ defmodule RunLengthEncoder do
     |> Enum.reduce(
       {"", ""},
       fn
-        << byte >> = curr, {acc, result} when byte >= ?0 and byte <= ?9 ->
+        <<byte>> = curr, {acc, result} when byte >= ?0 and byte <= ?9 ->
           {curr <> acc, result}
 
         curr, {acc, result} when acc == "" ->
           {acc, curr <> result}
 
-          curr, {acc, result} ->
+        curr, {acc, result} ->
           acc = acc |> String.reverse() |> String.to_integer()
           result = String.duplicate(curr, acc) <> result
 
