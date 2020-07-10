@@ -25,7 +25,7 @@ defmodule Raindrops do
     |> Enum.any?(&Kernel.==(&1, 1))
     |> case do
       true -> result
-         false -> Integer.to_string(number)
+      false -> Integer.to_string(number)
     end
   end
 
