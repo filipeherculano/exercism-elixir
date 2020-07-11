@@ -16,7 +16,9 @@ defmodule WordCount do
         else
           <<x>>
         end
-      x -> x
+
+      x ->
+        x
     end)
     |> Enum.join()
     |> String.split()
