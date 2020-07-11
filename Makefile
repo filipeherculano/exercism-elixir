@@ -6,7 +6,7 @@ download:
 	mv -v ~/snap/exercism/5/exercism/$(TRACK)/$(EXERCISE)/* ./$(EXERCISE)
 	git checkout -b feat/$(EXERCISE)_$(TRACK)
 
-upload_and_submit: submit
+upload:
 	git add .
 	git commit -m "feat: Solved $(EXERCISE) on $(TRACK) track"
 	git push origin feat/$(EXERCISE)_$(TRACK) 
